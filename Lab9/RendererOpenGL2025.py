@@ -64,29 +64,36 @@ while isRunning:
 
 			# Fragment Shaders
 			if event.key == pygame.K_1:
-				# K1: fragment_shader normal
 				currFragmentShader = fragment_shader
 				rend.SetShaders(currVertexShader, currFragmentShader, useBlending=False)
 
 			if event.key == pygame.K_2:
-				# K2: radioactive_shader (fucsia transparente)
 				currFragmentShader = radioactive_shader
 				rend.SetShaders(currVertexShader, currFragmentShader, useBlending=True)
 
 			if event.key == pygame.K_3:
-				# K3: glitch_shader (corrupción digital)
 				currFragmentShader = glitch_shader
+				rend.SetShaders(currVertexShader, currFragmentShader, useBlending=False)
+
+			if event.key == pygame.K_4:
+				currFragmentShader = threshold_shader
 				rend.SetShaders(currVertexShader, currFragmentShader, useBlending=False)
 
 			# Vertex Shaders
 			if event.key == pygame.K_5:
-				# K5: vertex_shader normal
 				currVertexShader = vertex_shader
 				rend.SetShaders(currVertexShader, currFragmentShader, useBlending=(currFragmentShader == radioactive_shader))
 
 			if event.key == pygame.K_6:
-				# K6: wave_shader (glitch distortion)
 				currVertexShader = wave_shader
+				rend.SetShaders(currVertexShader, currFragmentShader, useBlending=(currFragmentShader == radioactive_shader))
+
+			if event.key == pygame.K_7:
+				currVertexShader = expand_shader
+				rend.SetShaders(currVertexShader, currFragmentShader, useBlending=(currFragmentShader == radioactive_shader))
+
+			if event.key == pygame.K_8:
+				currVertexShader = slime_shader
 				rend.SetShaders(currVertexShader, currFragmentShader, useBlending=(currFragmentShader == radioactive_shader))
 
 
