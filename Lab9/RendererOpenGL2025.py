@@ -38,8 +38,8 @@ skyboxTextures = ["skybox/right.jpg",
 rend.CreateSkybox(skyboxTextures)
 
 
-faceModel = Model("models/hola.obj")
-faceModel.AddTexture("textures/hola.bmp")
+faceModel = Model("models/among.obj")
+faceModel.AddTexture("textures/among_t.bmp")
 faceModel.position.z = -5
 
 rend.scene.append(faceModel)
